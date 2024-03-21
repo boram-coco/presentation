@@ -439,16 +439,15 @@ Boram KIM
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<p><code>-</code> 이상치 빼기</p>
 </section>
 <section id="introduction-4" class="slide level2">
 <h2>Introduction</h2>
 <ul>
-<li>Credit card fraud transactions, such as these anomalies, refer to patterns that do not conform to a well-defined notion of normal behavior.<span class="citation" data-cites="chandola2009anomaly">(<a href="#/reference" role="doc-biblioref" onclick="">Chandola, Banerjee, and Kumar 2009</a>)</span></li>
+<li>Various studies have been conducted to detect fraudulent transactions in the past. These studies focused on learning and analyzing transaction amounts to identify fraudulent transactions. This assumption treats each transaction independently, making it difficult to determine individual fraudulent activities.</li>
 </ul>
 <aside class="notes">
 <ul>
-<li>이러한 신용카드 사기거래와 같은 이상치는 일반적인 행동으로 정의된 개념에 부합하지 않는 패턴을 말한다.</li>
+<li>기존의 사기거래 여부를 파악하기 위해서 다양한 연구가 진행되어 왔다. 해당 연구는 사기 거래 파악을 위해 거래 금액에 집중하여 학습하고 분석하였다. 이러한 가정은 각 거래를 독립적으로 보므로 개인의 사기거래 여부 파악이 어렵다.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -464,13 +463,12 @@ Boram KIM
 </section>
 <section id="introduction-5" class="slide level2">
 <h2>Introduction</h2>
-
-<img data-src="./figure/F5.png" style="width:70.0%" class="r-stretch quarto-figure-center"><p class="caption">Figure 2: A simple example of anomalies in a two-dimensional data set.</p><ul>
-<li>Figure 2 illustrates anomalies in a simple two-dimensional dataset. In the data, most observations lie within two normal regions, N1 and N2, and points sufficiently distant from these regions, such as o1 and o2, and points in region O3, are defined as anomalies.</li>
+<ul>
+<li>Now, let’s consider what happens if each transaction is not independent. Suppose a consumer loses their card; until the loss is detected, the card can be used for fraudulent transactions. In this study, when grouping the data by customer and visualizing it over time, the results appear as follows.</li>
 </ul>
 <aside class="notes">
 <ul>
-<li>그림 2은 간단한 이차원 데이터 집합에서의 이상치를 보여준다. 데이터에는 대부분의 관측치가 이 두 영역에 위치해 있는 정상 영역 N1과 N2에 있고, 이러한 영역으로부터 충분히 떨어진 점 o1과 o2, 그리고 영역 O3에 있는 점들은 이상치로 정의한다.</li>
+<li>각 거래가 독립적이지 않다면, 어떻게 될지 간단하게 생각해보자. 소비자가 카드를 분실하는 경우, 분실 여부를 알기 전까지 카드는 사기 거래에 사용된다. 본 연구에서 사용할 데이터를 고객별로 그룹핑하고, 시간에 따라 시각화 해 본 결과 아래와 같이 나타난다.</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -487,11 +485,11 @@ Boram KIM
 <section id="introduction-6" class="slide level2">
 <h2>Introduction</h2>
 <ul>
-<li>Existing research for outlier detection includes methods such as Classification, Clustering, Nearest Neighbor-Based, and Statistical approaches. However, research utilizing conventional methodologies for fraud transaction detection often fails to capture complex fraud patterns. Thus, in this study, we aim to detect outliers in fraudulent transactions using graph-based techniques.</li>
+<li>그.. 그림파일? 보여주는거 어떻게 할지 생각쓰</li>
 </ul>
 <aside class="notes">
 <ul>
-<li>이상치 탐지를 위한 기존 연구로는 Classification, Clustering, Nearest Neighbo Based, Statistical 등의 방법이 있다. 기존 연구 방법론을 활용한 사기 거래 탐지 연구는 복잡한 사기 패턴을 포착하지 못한다. 이에 본 연구에서는 그래프를 활용하여 사기 거래의 이상치를 탐지하고자 한다.</li>
+<li></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -504,32 +502,35 @@ Boram KIM
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-<p><code>-</code> 관련연구: 신용카드 분석 / GCN anom /</p>
-<p>fraud detection/ gcn 교집합이 제일 좋음</p>
 </section>
 <section id="introduction-7" class="slide level2">
 <h2>Introduction</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Introduction</a></li><li><a href="#tabset-1-2">bipartite graph</a></li><li><a href="#tabset-1-3">tripartite graph</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
 <ul>
 <li>In graph-based analysis, there are bipartite graphs and tripartite graphs. Bipartite graphs have difficulty detecting anomalies in individual transactions. Tripartite graphs allow for easier analysis at the individual level, but they are time-consuming and complex.</li>
 </ul>
+</div>
+<div id="tabset-1-2">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figure/F2.png" style="width:70.0%"></p>
 <figcaption>Figure 3:An example of a bipartite graph</figcaption>
 </figure>
 </div>
+</div>
+<div id="tabset-1-3">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="./figure/F3.png" style="width:70.0%"></p>
 <figcaption>Figure 4:An example of a tripartite graph</figcaption>
 </figure>
 </div>
-<blockquote>
-<p>돌린 결과 !!</p>
-</blockquote>
-<blockquote>
-<p>위의.. 사진 암튼 어케 해보자</p>
-</blockquote>
+</div>
+</div>
+</div>
 <aside class="notes">
 <ul>
 <li>그래프 기반 분석 방법으로는 이분형 그래프와 삼분형 그래프가 있다. 이분형 그래프는 개별 거래의 이상치 탐지에 어려움이 있다. 삼분형은 개별 수준의 분석이 용이하지만 거래 시간이 오래 걸리고 복잡하다는 단점이 있다.</li>
@@ -546,7 +547,7 @@ Boram KIM
           display:block!important;
       }</style></aside>
 </section>
-<section id="introduction-8" class="slide level2">
+<section id="introduction-9" class="slide level2">
 <h2>Introduction</h2>
 <p>Therefore, in this study, we propose a method to enhance the connectivity of graphs using the time differences between transactions. Through this method, we aim to address the following questions:</p>
 <ol type="1">
@@ -571,9 +572,9 @@ Boram KIM
           display:block!important;
       }</style></aside>
 </section>
-<section id="introduction-9" class="slide level2">
+<section id="introduction-10" class="slide level2">
 <h2>Introduction</h2>
-<p>To begin research on fraud detection based on graph analysis, let’s first understand the concept of a graph.</p>
+<p>To begin research on fraud detection based on graph analysis, let’s first understand the concept of a graph.[<span class="citation" data-cites="wu2020comprehensive">Wu et al. (<a href="#/reference" role="doc-biblioref" onclick="">2020</a>)</span>]<span class="citation" data-cites="scarselli2008graph">(<a href="#/reference" role="doc-biblioref" onclick="">Scarselli et al. 2008</a>)</span></p>
 <ul>
 <li><p>Graph <span class="math inline">\(G = (V,E)\)</span> with <span class="math inline">\(N\)</span> nodes <span class="math inline">\(i \in v\)</span> and <span class="math inline">\(|E|\)</span> edges <span class="math inline">\((i,j) \in E\)</span></p></li>
 <li><p><span class="math inline">\(A \in \mathbb{R}^{N \times N}\)</span>: adjacency matrix of <span class="math inline">\(G\)</span></p></li>
@@ -601,13 +602,94 @@ Boram KIM
           display:block!important;
       }</style></aside>
 </section></section>
+<section>
 <section id="related-studies" class="title-slide slide level1 center">
 <h1>Related Studies</h1>
-<blockquote>
-<p>Related Studies 정확하게 어떤 것을 넣어야할지 잘 모르겠담. .흠..</p>
-</blockquote>
-</section>
 
+</section>
+<section id="related-studies-1" class="slide level2">
+<h2>Related Studies</h2>
+<p>Supervised learning methods commonly researched for fraud detection include the following techniques.</p>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Case-Based Reasoning</a></li><li><a href="#tabset-2-2">Logistic regression</a></li><li><a href="#tabset-2-3">Hidden Markov Model</a></li><li><a href="#tabset-2-4">Association rules</a></li><li><a href="#tabset-2-5">SVM</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<p>Case-Based Reasoning is applied to reduce the number of final-line fraud investigations in the credit approval process, demonstrating that an adaptive solution can offer fraud filtering and case ordering functions, thus minimizing the required number of final-line fraud investigations.<span class="citation" data-cites="wheeler2000multiple">(<a href="#/reference" role="doc-biblioref" onclick="">Wheeler and Aitken 2000</a>)</span></p>
+</div>
+<div id="tabset-2-2">
+<p>Logistic regression is useful for situations in which we want to be able to predict the presence or absence of a characteristic or outcome based on values of a set of predictor variables. <span class="citation" data-cites="shen2007application">(<a href="#/reference" role="doc-biblioref" onclick="">Shen, Tong, and Deng 2007</a>)</span></p>
+</div>
+<div id="tabset-2-3">
+<p>Hidden Markov Model is trained with normal behavior of cardholder. If an incoming credit card transaction is not accepted by the HMM with sufficiently high probability, it is considered to be fraudulent. <span class="citation" data-cites="srivastava2008credit">(<a href="#/reference" role="doc-biblioref" onclick="">Srivastava et al. 2008</a>)</span></p>
+</div>
+<div id="tabset-2-4">
+<p>Association rules are utilized to extract normal behavior patterns from credit card transaction databases for detecting and preventing fraud in abnormal transactions <span class="citation" data-cites="sanchez2009association">(<a href="#/reference" role="doc-biblioref" onclick="">Sánchez et al. 2009</a>)</span></p>
+</div>
+<div id="tabset-2-5">
+<p>SVM’s effectiveness lies in its ability to handle imbalanced data, such as fraud detection, by leveraging the simplicity of linear classifiers and operating in feature-rich spaces. <span class="citation" data-cites="bhattacharyya2011data">(<a href="#/reference" role="doc-biblioref" onclick="">Bhattacharyya et al. 2011</a>)</span></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>사기 거래 탐지 연구를 위한 지도학습 방법으로는 다음과 같은 방법이 많이 연구되어 왔다.</p>
+<ul>
+<li><p>사례 기반 추론은 신용 승인 프로세스에서 최종 단계 사기 조사의 수를 줄이는 데 적용되며, 적응형 솔루션이 사기 필터링 및 사례 정렬 기능을 제공하여 최종 단계 사기 조사의 필요 수를 최소화할 수 있음을 보여준다.</p></li>
+<li><p>로지스틱 회귀는 예측 변수 값에 기반하여 특성 또는 결과의 존재 또는 부재를 예측하고자 할 때 유용하다.</p></li>
+<li><p>HMM은 카드 홀더의 정상적인 행동으로 훈련된다. HMM에서 수신되는 신용 카드 거래가 충분히 높은 확률로 수용되지 않으면 이를 사기로 간주한다.</p></li>
+<li><p>연관규칙은 비정상 거래에서 사기를 탐지하고 예방하기 위해 신용카드 거래 데이터베이스에서 정상적인 행동 패턴을 추출하는 데 활용된다.</p></li>
+<li><p>SVM은 선형 분류기의 간결함을 활용하고 특성이 풍부한 공간에서 작동함으로써 사기 탐지와 같은 불균형한 데이터를 작업하는 것에 활용성이 높다.</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="related-studies-2" class="slide level2">
+<h2>Related Studies</h2>
+<p>Research on fraud transaction detection using graph models includes the following methods.</p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Graph</a></li><li><a href="#tabset-3-2">GCN</a></li><li><a href="#tabset-3-3"></a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<p>A general, comprehensive, and structured overview of the state-of-the-art methods for anomaly detection in data represented as graphs. As a key contribution, we provide a comprehensive exploration of both data mining and machine learning algorithms for these {} tasks. <span class="citation" data-cites="akoglu2015graph">(<a href="#/reference" role="doc-biblioref" onclick="">Akoglu, Tong, and Koutra 2015</a>)</span></p>
+</div>
+<div id="tabset-3-2">
+<p>Graph Convolutional Networks (GCNs) are used to capture complex relationships between transactions and detect fraudulent activities based on the graph representation of transaction data.<span class="citation" data-cites="kipf2016semi">(<a href="#/reference" role="doc-biblioref" onclick="">Kipf and Welling 2016</a>)</span></p>
+</div>
+<div id="tabset-3-3">
+
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>사기 거래 탐지 연구를 위한 지도학습 방법으로는 다음과 같은 방법이 많이 연구되어 왔다.</p>
+<ul>
+<li>그래프</li>
+</ul>
+<p>데이터를 그래프로 표현한 경우의 이상 탐지에 대한 최신 기술 방법에 대한 일반적이고 포괄적이며 체계적인 개요를 제공한다. 주요 기여로는 이러한 탐지 작업을 위한 데이터 마이닝 및 기계 학습 알고리즘의 포괄적인 탐색을 제공한다.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><code>-</code> 관련연구: 신용카드 분석 / GCN anom /</p>
+<p>fraud detection/ gcn 교집합이 제일 좋음<span class="citation" data-cites="van2015apate">(<a href="#/reference" role="doc-biblioref" onclick="">Van Vlasselaer et al. 2015</a>)</span></p>
+<p><span class="citation" data-cites="wang2019semi">(<a href="#/reference" role="doc-biblioref" onclick="">Wang et al. 2019</a>)</span></p>
+<p><span class="citation" data-cites="jiang2019anomaly">(<a href="#/reference" role="doc-biblioref" onclick="">Jiang et al. 2019</a>)</span></p>
+</section></section>
 <section>
 <section id="data-description" class="title-slide slide level1 center">
 <h1>Data description</h1>
@@ -615,9 +697,9 @@ Boram KIM
 </section>
 <section id="data-description-1" class="slide level2">
 <h2>Data description</h2>
-<p>The dataset under consideration contains credit card transaction records from European cardholders captured in the month of September 2013. It encompasses transactions that were conducted across a network of 800 merchants and includes data from 1,000 individual cardholders. Originally, this dataset is composed of 23 distinct features that offer various insights into each transaction. However, for the purposes of this study, we have selectively utilized only a subset of these features that are deemed most relevant to our analysis objectives.</p>
+<p>To identify fraudulent transactions using the method proposed in this study, we first prepare a dataset related to fraudulent transactions. Data can be obtained from sites such as Kaggle, credit card transactions, and financial transaction exchanges. However, such data is anonymized to protect customer privacy and is provided for data analysis purposes. To use the method proposed in this study, unique indices (in this study, cc_num is used), time, and nodes (in this study, amt is used) are required. As mentioned earlier, other datasets without indices or time are difficult to use in this study.</p>
 <aside class="notes">
-<p>고려 중인 데이터 세트에는 2013년 9월 한 달 동안 수집된 유럽 카드 소지자의 신용카드 거래 기록이 포함되어 있습니다. 800개의 가맹점 네트워크에서 이루어진 거래가 포함되며 다음 데이터를 포함합니다. 1,000명의 개별 카드 소유자. 원래 이 데이터 세트는 각 거래에 대한 다양한 인사이트를 제공하는 23개의 고유한 기능으로 구성되어 있습니다. 하지만 이 연구의 목적을 위해 이 연구에서는 분석 목표와 가장 관련이 있다고 판단되는 일부 기능만 분석 목표와 가장 관련이 있다고 판단되는 일부 기능만을 선택적으로 활용했습니다.</p>
+<p>본 연구에서 제시한 방법으로 사기 거래를 파악하기 위해, 먼저 사기거래 관련 데이터셋을 준비한다. 데이터는 케글, 신용거래, 금융거래소 등의 사이트에서 얻을 수 있다. 다만 이러한 데이터들은 고객의 개인정보 보호를 위해 가명처리 되어 데이터 분석을 위해 제공된 데이터이다. 본 연구의 방법을 사용하기 위해서는 고유 index(본 연구에서는 cc_num을 사용하였다.), time, node(본 연구에서는 amt를 사용하였다.)가 필요하다. 앞서 말한 바와 같이 다른 데이터들은 index 혹은 time이 없는 데이터로 본 연구에서는 사용이 어렵다.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -630,10 +712,27 @@ Boram KIM
           display:block!important;
       }</style></aside>
 <blockquote>
-<p>다른 데이터들을 찾아봤는데 연구에 필요한 (인덱스나 시간컬럼)이 없어서 사용할 수 없다는 내용은 구두로만 하는게 좋음</p>
+<p>데이터 표를 보여줄 필요는 없겠지!</p>
 </blockquote>
 </section>
 <section id="data-description-2" class="slide level2">
+<h2>Data description</h2>
+<p>As mentioned earlier, since other datasets are difficult to use, this study utilizes a dataset containing credit card transaction records of European cardholders collected over one month in September 2013. It encompasses transactions that were conducted across a network of 800 merchants and includes data from 1,000 individual cardholders. Originally, this dataset is composed of 23 distinct features that offer various insights into each transaction. However, for the purposes of this study, we have selectively utilized only a subset of these features that are deemed most relevant to our analysis objectives.</p>
+<aside class="notes">
+<p>앞서 말한 바와 같이, 다른 데이터 셋들은 사용이 어려우므로, 본 연구에서는 2013년 9월 한 달 동안 수집된 유럽 카드 소지자의 신용카드 거래 기록이 포함된 데이터 셋을 이용한다. 800개의 가맹점 네트워크에서 이루어진 거래가 포함되며 다음 데이터를 포함합니다. 1,000명의 개별 카드 소유자. 원래 이 데이터 세트는 각 거래에 대한 다양한 인사이트를 제공하는 23개의 고유한 기능으로 구성되어 있습니다. 하지만 이 연구의 목적을 위해 이 연구에서는 분석 목표와 가장 관련이 있다고 판단되는 일부 기능만 분석 목표와 가장 관련이 있다고 판단되는 일부 기능만을 선택적으로 활용했습니다.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="data-description-3" class="slide level2">
 <h2>Data description</h2>
 <table>
 <colgroup>
@@ -671,13 +770,13 @@ Boram KIM
 </table>
 <p>[Table 1: A list of data variables used in the study]</p>
 </section>
-<section id="data-description-3" class="slide level2">
+<section id="data-description-4" class="slide level2">
 <h2>Data description</h2>
 <blockquote>
 <p>원 데이터 표 형식으로 추가?</p>
 </blockquote>
 </section>
-<section id="data-description-4" class="slide level2">
+<section id="data-description-5" class="slide level2">
 <h2>Data description</h2>
 <blockquote>
 <p>활용 데이터 표 형식으로 추가?</p>
@@ -690,11 +789,16 @@ Boram KIM
 </section>
 <section id="proposed-method-1" class="slide level2">
 <h2>Proposed method</h2>
-<p>Let’s say the given data is <span class="math inline">\(\bf X, \bf y\)</span>, where <span class="math inline">\(\bf X\)</span> is a matrix with <span class="math inline">\(N\)</span> rows and <span class="math inline">\(\bf y\)</span> is a vector of length <span class="math inline">\(N\)</span>. <span class="math inline">\(\bf y\)</span> contains labels indicating the presence of fraud, while <span class="math inline">\(\bf X\)</span> represents the design matrix necessary for predicting <span class="math inline">\(\bf y\)</span>. We interpret the given data as a graph. Let <span class="math inline">\(\cal I\)</span> be the set of <span class="math inline">\(\tt cc\_num\)</span>.</p>
+<ul>
+<li><p><span class="math inline">\(\mathbf{X}\)</span> is a matrix with <span class="math inline">\(N\)</span> rows and <span class="math inline">\(\mathbf{y}\)</span> is a vector of length <span class="math inline">\(N\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathbf{y}\)</span> contains labels indicating fraud presence, while <span class="math inline">\(\mathbf{X}\)</span> represents the design matrix for predicting <span class="math inline">\(\mathbf{y}\)</span>.</p></li>
+<li><p>We interpret the data as a graph.</p></li>
+<li><p>Let <span class="math inline">\(\mathcal{I}\)</span> be the set of <span class="math inline">\(\text{cc_num}\)</span>.</p></li>
+</ul>
 </section>
 <section id="proposed-method-2" class="slide level2">
 <h2>Proposed method</h2>
-<p>Moreover, let <span class="math inline">\(\cal T_i, i \in \cal I\)</span>, be the set of transaction times for the <span class="math inline">\(i\)</span>-th customer. The given data can be expressed as <span class="math inline">\(\cal D:=\{(\bf X_{i,t},{\bf y}_{i,t}): i \in {\cal I}, t \in {\cal T}_i \}\)</span>. To represent the graph structure, we need to define nodes and edges. The set of nodes is defined as <span class="math inline">\(\cal V = \{v_{i,t}: i \in {\cal I}, t \in {\cal T}_i \}\)</span>. Note that <span class="math inline">\(|{\cal V}|=\sum_{i \in {\cal I}} |{\cal T}_i|=N\)</span>. The links between data points are defined as <span class="math inline">\({\cal E} = \bigcup_{i \in {\cal I}} \{ (v_{i,t},v_{i,s}) : t,s \in {\cal T}_i \text{ and } t\neq s \}\)</span>, considering connections only within the same customer.</p>
+<p>let <span class="math inline">\(\cal T_i, i \in \cal I\)</span>, be the set of transaction times for the <span class="math inline">\(i\)</span>-th customer. The given data can be expressed as <span class="math inline">\(\cal D:=\{(\bf X_{i,t},{\bf y}_{i,t}): i \in {\cal I}, t \in {\cal T}_i \}\)</span>. To represent the graph structure, we need to define nodes and edges. The set of nodes is defined as <span class="math inline">\(\cal V = \{v_{i,t}: i \in {\cal I}, t \in {\cal T}_i \}\)</span>. Note that <span class="math inline">\(|{\cal V}|=\sum_{i \in {\cal I}} |{\cal T}_i|=N\)</span>. The links between data points are defined as <span class="math inline">\({\cal E} = \bigcup_{i \in {\cal I}} \{ (v_{i,t},v_{i,s}) : t,s \in {\cal T}_i \text{ and } t\neq s \}\)</span>, considering connections only within the same customer.</p>
 </section>
 <section id="proposed-method-3" class="slide level2">
 <h2>Proposed method</h2>
@@ -713,9 +817,6 @@ Boram KIM
 <p><span class="citation" data-cites="kipf2016semi">(<a href="#/reference" role="doc-biblioref" onclick="">Kipf and Welling 2016</a>)</span> To predict <span class="math inline">\({\bf y}\)</span>, we stacked graph convolution layers as follows:</p>
 <p><span class="math display">\[{\bf H}^{(l+1)} = \sigma\big({\bf D}^{-1/2}{\bf A}{\bf D}^{-1/2}{\bf H}^{(l)} {\bf \Theta}^{(l)}) \big)\]</span></p>
 <p>Here, <span class="math inline">\({\bf D}\)</span> is the degree matrix of <span class="math inline">\({\bf A}, {\bf \Theta}^{(l)}\)</span> represents the learnable parameters, and <span class="math inline">\(\sigma\)</span> denotes the activation function. <span class="math inline">\({\bf H}^{(l)}\)</span> is the input for the <span class="math inline">\(l\)</span>th layer, and <span class="math inline">\({\bf H}^{(l+1)}\)</span> is the output, where for <span class="math inline">\(l=0, {\bf H}^{(0)}={\bf X}\)</span>, and the output of the final layer is defined as <span class="math inline">\({\bf y}\)</span>.</p>
-<blockquote>
-<p>위의 내용은 포스터 때 했던 건데 줄글 형식보닩 단답으로 표시해주는게 좋을 듯</p>
-</blockquote>
 </section></section>
 <section>
 <section id="experimental-research" class="title-slide slide level1 center">
@@ -729,6 +830,23 @@ Boram KIM
 <p>실험2</p>
 <p>df50 pyod / autogluon / proposed</p>
 <p>실험3</p>
+</section>
+<section id="experimet" class="slide level2">
+<h2>Experimet</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Proposed method</a></li><li><a href="#tabset-4-2">Autogluon</a></li><li><a href="#tabset-4-3">Pyod</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p>Performance of proposed method across different fraud rates in training data</p>
+</div>
+<div id="tabset-4-2">
+<p>Performance of Autogluon method across different fraud rates in training data</p>
+</div>
+<div id="tabset-4-3">
+<p>Performance of Pyod method across different fraud rates in training data</p>
+</div>
+</div>
+</div>
 </section></section>
 <section id="conclusion-and-discussion" class="title-slide slide level1 center">
 <h1>Conclusion and Discussion</h1>
@@ -744,11 +862,41 @@ Boram KIM
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-chandola2009anomaly" class="csl-entry" role="listitem">
-Chandola, Varun, Arindam Banerjee, and Vipin Kumar. 2009. <span>“Anomaly Detection: A Survey.”</span> <em>ACM Computing Surveys (CSUR)</em> 41 (3): 1–58.
+<div id="ref-akoglu2015graph" class="csl-entry" role="listitem">
+Akoglu, Leman, Hanghang Tong, and Danai Koutra. 2015. <span>“Graph Based Anomaly Detection and Description: A Survey.”</span> <em>Data Mining and Knowledge Discovery</em> 29: 626–88.
+</div>
+<div id="ref-bhattacharyya2011data" class="csl-entry" role="listitem">
+Bhattacharyya, Siddhartha, Sanjeev Jha, Kurian Tharakunnel, and J Christopher Westland. 2011. <span>“Data Mining for Credit Card Fraud: A Comparative Study.”</span> <em>Decision Support Systems</em> 50 (3): 602–13.
+</div>
+<div id="ref-jiang2019anomaly" class="csl-entry" role="listitem">
+Jiang, Jianguo, Jiuming Chen, Tianbo Gu, Kim-Kwang Raymond Choo, Chao Liu, Min Yu, Weiqing Huang, and Prasant Mohapatra. 2019. <span>“Anomaly Detection with Graph Convolutional Networks for Insider Threat and Fraud Detection.”</span> In <em>MILCOM 2019-2019 IEEE Military Communications Conference (MILCOM)</em>, 109–14. IEEE.
 </div>
 <div id="ref-kipf2016semi" class="csl-entry" role="listitem">
 Kipf, Thomas N, and Max Welling. 2016. <span>“Semi-Supervised Classification with Graph Convolutional Networks.”</span> <em>arXiv Preprint arXiv:1609.02907</em>.
+</div>
+<div id="ref-sanchez2009association" class="csl-entry" role="listitem">
+Sánchez, Daniel, MA Vila, L Cerda, and José-Maria Serrano. 2009. <span>“Association Rules Applied to Credit Card Fraud Detection.”</span> <em>Expert Systems with Applications</em> 36 (2): 3630–40.
+</div>
+<div id="ref-scarselli2008graph" class="csl-entry" role="listitem">
+Scarselli, Franco, Marco Gori, Ah Chung Tsoi, Markus Hagenbuchner, and Gabriele Monfardini. 2008. <span>“The Graph Neural Network Model.”</span> <em>IEEE Transactions on Neural Networks</em> 20 (1): 61–80.
+</div>
+<div id="ref-shen2007application" class="csl-entry" role="listitem">
+Shen, Aihua, Rencheng Tong, and Yaochen Deng. 2007. <span>“Application of Classification Models on Credit Card Fraud Detection.”</span> In <em>2007 International Conference on Service Systems and Service Management</em>, 1–4. IEEE.
+</div>
+<div id="ref-srivastava2008credit" class="csl-entry" role="listitem">
+Srivastava, Abhinav, Amlan Kundu, Shamik Sural, and Arun Majumdar. 2008. <span>“Credit Card Fraud Detection Using Hidden Markov Model.”</span> <em>IEEE Transactions on Dependable and Secure Computing</em> 5 (1): 37–48.
+</div>
+<div id="ref-van2015apate" class="csl-entry" role="listitem">
+Van Vlasselaer, Véronique, Cristián Bravo, Olivier Caelen, Tina Eliassi-Rad, Leman Akoglu, Monique Snoeck, and Bart Baesens. 2015. <span>“APATE: A Novel Approach for Automated Credit Card Transaction Fraud Detection Using Network-Based Extensions.”</span> <em>Decision Support Systems</em> 75: 38–48.
+</div>
+<div id="ref-wang2019semi" class="csl-entry" role="listitem">
+Wang, Daixin, Jianbin Lin, Peng Cui, Quanhui Jia, Zhen Wang, Yanming Fang, Quan Yu, Jun Zhou, Shuang Yang, and Yuan Qi. 2019. <span>“A Semi-Supervised Graph Attentive Network for Financial Fraud Detection.”</span> In <em>2019 IEEE International Conference on Data Mining (ICDM)</em>, 598–607. IEEE.
+</div>
+<div id="ref-wheeler2000multiple" class="csl-entry" role="listitem">
+Wheeler, Richard, and Stuart Aitken. 2000. <span>“Multiple Algorithms for Fraud Detection.”</span> In <em>Applications and Innovations in Intelligent Systems VII: Proceedings of ES99, the Nineteenth SGES International Conference on Knowledge Based Systems and Applied Artificial Intelligence, Cambridge, December 1999</em>, 219–31. Springer.
+</div>
+<div id="ref-wu2020comprehensive" class="csl-entry" role="listitem">
+Wu, Zonghan, Shirui Pan, Fengwen Chen, Guodong Long, Chengqi Zhang, and S Yu Philip. 2020. <span>“A Comprehensive Survey on Graph Neural Networks.”</span> <em>IEEE Transactions on Neural Networks and Learning Systems</em> 32 (1): 4–24.
 </div>
 </div>
 </section>
