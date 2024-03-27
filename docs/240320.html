@@ -418,6 +418,9 @@ Boram KIM
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
+<blockquote>
+<p>다른 영어 논문에서 놓운고 하깅</p>
+</blockquote>
 </section>
 <section id="introduction-3" class="slide level2">
 <h2>Introduction</h2>
@@ -485,7 +488,7 @@ Boram KIM
 <section id="introduction-6" class="slide level2">
 <h2>Introduction</h2>
 <ul>
-<li>그.. 그림파일? 보여주는거 어떻게 할지 생각쓰</li>
+<li>그.. 그림파일? 보여주는거 어떻게 할지 생각쓰 <img data-src="![image.png](240320_files/figure-revealjs/daad57fe-8e86-4c8a-a2f9-7e2721afc058-1-a907bddf-f696-4144-ab67-9e691c45899f.png)"></li>
 </ul>
 <aside class="notes">
 <ul>
@@ -557,9 +560,18 @@ Boram KIM
 <aside class="notes">
 <p>이에 본 연구에서는 거래 간 시간 차이를 이용해 그래프의 연결성을 향상시키는 방법을 제안하고자 한다. 이 방법을 통해 확인하고 싶은 내용은 다음과 같다.</p>
 <ol type="1">
-<li><p>비 그래프 기반 연구 방법에 비해 개별 거래 파악이 용이한가?</p></li>
-<li><p>그래프 기반 연구 방법에 비해 간단한가?</p></li>
+<li>비 그래프 기반 연구 방법에 비해 개별 거래 파악이 용이한가?</li>
 </ol>
+<ul>
+<li><p>비독립적인 연결을 고려하는게 의미가 있는가?</p></li>
+<li><p>거래 금액에 의존한 분석에서 벗어날 수 있는가?</p></li>
+</ul>
+<ol start="2" type="1">
+<li>기존에 제시된 그래프 기반 연구 방법에 비해 성능이 우수한가?</li>
+</ol>
+<ul>
+<li>그래프 구조가 단순히 이해하기 쉽게 표현될 수 있는가?</li>
+</ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -617,7 +629,7 @@ Boram KIM
 <p>Case-Based Reasoning is applied to reduce the number of final-line fraud investigations in the credit approval process, demonstrating that an adaptive solution can offer fraud filtering and case ordering functions, thus minimizing the required number of final-line fraud investigations.<span class="citation" data-cites="wheeler2000multiple">(<a href="#/reference" role="doc-biblioref" onclick="">Wheeler and Aitken 2000</a>)</span></p>
 </div>
 <div id="tabset-2-2">
-<p>Logistic regression is useful for situations in which we want to be able to predict the presence or absence of a characteristic or outcome based on values of a set of predictor variables. <span class="citation" data-cites="shen2007application">(<a href="#/reference" role="doc-biblioref" onclick="">Shen, Tong, and Deng 2007</a>)</span></p>
+<p>Logistic regression is useful for situations in which we want to be able to predict the presence or absence of a characteristic or outcome based on values of a set of predictor variables. <span class="citation" data-cites="shen2007application">(<a href="#/reference" role="doc-biblioref" onclick="">Shen, Tong, and Deng 2007</a>)</span> S는~ 이렇게 연구했따. 라고 쓰기 줄글로</p>
 </div>
 <div id="tabset-2-3">
 <p>Hidden Markov Model is trained with normal behavior of cardholder. If an incoming credit card transaction is not accepted by the HMM with sufficiently high probability, it is considered to be fraudulent. <span class="citation" data-cites="srivastava2008credit">(<a href="#/reference" role="doc-biblioref" onclick="">Srivastava et al. 2008</a>)</span></p>
@@ -823,13 +835,43 @@ Boram KIM
 <h1>Experimental Research</h1>
 
 </section>
+<section id="experiment-1" class="slide level2">
+<h2>Experiment 1</h2>
+<h3 id="conditions">Conditions</h3>
+<p>Credit card data is notorious for its highly imbalanced nature, especially regarding fraudulent transactions. In the dataset utilized for this study, the ratio of fraudulent transactions is 0.00573. Due to the extremely low proportion of fraudulent transactions, employing graph-based methods on the entire dataset might result in significant computational overhead, as the size of the graph would be substantial.</p>
+</section>
+<section id="experiment-1-1" class="slide level2">
+<h2>Experiment 1</h2>
+<h3 id="conditions-1">Conditions</h3>
+<p>To mitigate computational complexity, this study proposes to compare the performance of the original dataset with down-sampled data using PyOD or deep learning methods. By comparing the results of experiments conducted on the original dataset and the down-sampled dataset, if the performance on the down-sampled dataset surpasses that of the original dataset, it suggests that the proposed method, as well as the down-sampling technique, is effective.</p>
+</section>
+<section id="experiment-1-2" class="slide level2">
+<h2>Experiment 1</h2>
+<h3 id="conditions-2">Conditions</h3>
+<p>Through this comparative analysis, it is anticipated that the down-sampling method could potentially outperform the original dataset, validating its efficacy as a viable approach for addressing imbalanced data issues in credit card fraud detection.</p>
+<section id="실험1-조건" class="notes">
+<h3>실험1-조건</h3>
+<p>신용카드 데이터는 사기 거래의 불균형이 심한 데이터이다. 본 연구에서 활용하는 데이터의 사기 거래 비율은 0.00573이다. 사기 거래 비율이 굉장히 작기 때문에 전체 데이터를 활용하는 데 있어 graph를 활용해 제안한 방법으로 실험을 돌리게 되면 edge의 크기가 커져 실험 시간이 오래 걸릴 수 있다. 이에, Pyod나 딥러닝 방법을 통해 원 데이터의 실험과 다운 샘플링 한 데이터의 실험 결과와 비교하고자 한다. 다운 샘플링 한 데이터의 실험 결과가 원 데이터의 실험 결과보다 좋은 경우 제안한 방법 또한 다운 샘플링 한 방법이 좋을 것이다.</p>
+</section>
+</section>
+<section id="experiment-1-3" class="slide level2">
+<h2>Experiment 1</h2>
+<h3 id="experimet-results">Experimet Results</h3>
+
+<img data-src="240320_files/figure-revealjs/afaf1f97-bf75-418d-bf5f-38da08ba2d07-1-325ab403-3f22-4f33-8713-8894e45a4571.png" class="r-stretch quarto-figure-center"><p class="caption">image.png</p><section id="실험1-결과" class="notes">
+<h3>실험1-결과</h3>
+<p>ㅜㅜ 왜 자꾸 블로그 업로드가 안되지? commit 가 안되는데 무튼… 위의 결과를 통해 다운샘플링 한게 잘 보인다는거 보여주고 싶음</p>
+</section>
+</section>
+<section id="experiment-2" class="slide level2">
+<h2>Experiment 2</h2>
+<h3 id="conditions-3">Conditions</h3>
+<section id="실험2" class="notes">
+<h3>실험2</h3>
+</section>
+</section>
 <section id="experimetal-setting" class="slide level2">
 <h2>Experimetal setting</h2>
-<p>실험1</p>
-<p>원 데이터 pyod / autogluon / proposed</p>
-<p>실험2</p>
-<p>df50 pyod / autogluon / proposed</p>
-<p>실험3</p>
 </section>
 <section id="experimet" class="slide level2">
 <h2>Experimet</h2>
